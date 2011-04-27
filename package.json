@@ -1,0 +1,21 @@
+{
+  "name": "pdfcrowd",
+  "version": "1.0.0b",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:pdfcrowd/node-pdfcrowd.git"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "engines": {
+    "node": "*"
+  },
+  "files": [
+    ""
+  ],
+  "description": "A wrapper for the Pdfcrowd API. It allows you to convert web pages or raw HTML code to PDF.",
+  "homepage": "https://github.com/pdfcrowd/node-pdfcrowd",
+  "author": "Pdfcrowd Dev <info+github@pdfcrowd.com> (http://pdfcrowd.com/html-to-pdf-api/)",
+  "main": "./lib/pdfcrowd"
+}
