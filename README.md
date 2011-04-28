@@ -19,34 +19,27 @@ Dependencies
 
 ## Getting Started
 
-The following code converts raw HTML code to PDF and sends it as a response:
+The following code converts raw HTML code to PDF and sends it as a
+[response](http://nodejs.org/docs/latest/api/http.html#http.ServerResponse):
 
-    var Pdfcrowd = require('./lib/pdfcrowd');
+    var pdf = require('./lib/pdfcrowd');
 
-    var myPdfcrowd = new Pdfcrowd('your-username', 'your-api-key');
-        
-    myPdfcrowd.on('pdf', function(rstream) {
-        res.setHeader("Content-Type", "application/pdf");
-        res.setHeader("Cache-Control", "no-cache");
-        res.setHeader("Accept-Ranges", "none");
-        res.setHeader("Content-Disposition", "attachment; filename=\"generated.pdf\"");
-        rstream.pipe(res);
-    });
-        
-    myPdfcrowd.convertHtml('<html>...</html>');
+    var myPdfcrowd = new pdf.Pdfcrowd('your-username', 'your-api-key');
+    myPdfcrowd.convertHtml('<html>...</html>', pdf.sendHttpResponse(res));
     
-You can convert also a web page:
+You can convert also a web page and save it to a file:
     
-    myPdfcrowd.convertURI('http://example.com');
+    myPdfcrowd.convertURI('http://example.com', pdf.saveToFile("example_com.pdf"));
 
 Or a local HTML file:
     
-    myPdfcrowd.convertFile('/local/file.html');
+    myPdfcrowd.convertFile('/local/file.html', pdf.saveToFile("file.pdf"));
     
 The generated PDF can be customized:
 
     myPdfcrowd.convertURI(
         'http://example.com', 
+        pdf.saveToFile("example_com.pdf"),
         {
             width: "11in",
             height: "8.5in",
@@ -56,7 +49,7 @@ The generated PDF can be customized:
                           </div>'
         });
 
-## Reference
+## Reference (outdated)
 
 ### Construction
 
