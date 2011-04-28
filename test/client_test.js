@@ -6,6 +6,7 @@ credentials = require('./config').Credentials;
 function saveToFile(fname) {
     return {
         pdf: function(rstream) { 
+            console.log("start");
             wstream = fs.createWriteStream(fname);
             rstream.pipe(wstream);
         },
@@ -17,6 +18,6 @@ function saveToFile(fname) {
 myPdfcrowd = new Pdfcrowd(credentials.username,
                           credentials.apikey);
 
-//myPdfcrowd.convertHtml("raw code", saveToFile("html.pdf"))
-//myPdfcrowd.convertURI("http://example.com", saveToFile("url.pdf"))
+myPdfcrowd.convertHtml("raw code", saveToFile("html.pdf"))
+myPdfcrowd.convertURI("http://example.com", saveToFile("url.pdf"))
 myPdfcrowd.convertFile("sample.html", saveToFile("file.pdf"))
