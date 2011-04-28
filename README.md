@@ -59,7 +59,7 @@ Creates a Pdfcrowd instance.
     
 ### Methods
 
-The following methods generate PDF. 
+Common arguments:
 
 * The *callbacks* argument is an object that should define the following methods
 
@@ -76,8 +76,7 @@ The following methods generate PDF.
   PDF. You can find the list of all options
   [here](http://pdfcrowd.com/html-to-pdf-api/#api-ref-conversion-common-par).
 
-
--
+The following methods generate PDF. 
 
      Pdfcrowd.convertHtml(html, callbacks [,options]);
 
@@ -91,18 +90,9 @@ Convert a web page to PDF. The *url* argument must start with http:// or https:/
 
 Convert a local HTML file to PDF.
     
-### Callbacks
+### Helpers
 
-      Pdfcrowd.on('pdf', function(readableStream){});
-
-Called when the PDF [stream](http://nodejs.org/docs/latest/api/streams.html#readable_Stream) becomes available.
-
-
-      Pdfcrowd.on('error', function(errorMsg, statusCode){});
-
-Called when an error occurs. *errorMsg* is an string containing the
-error message and *statusCode* is a HTTP status code.
- 
+TBD 
 
 # License (MIT License)
 
