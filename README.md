@@ -19,12 +19,12 @@ Dependencies
 
 ## Getting Started
 
-The following code converts raw HTML code to PDF and sends it as a
+The following code converts raw HTML code to PDF and sends it as a HTTP
 [response](http://nodejs.org/docs/latest/api/http.html#http.ServerResponse):
 
     var pdf = require('./lib/pdfcrowd');
 
-    var myPdfcrowd = new pdf.Pdfcrowd('your-username', 'your-api-key');
+    var myPdfcrowd = new pdf.Pdfcrowd('username', 'apikey');
     myPdfcrowd.convertHtml('<html>...</html>', pdf.sendHttpResponse(response));
     
 You can convert also a web page and save it to a file:
@@ -49,7 +49,7 @@ The generated PDF can be customized:
                           </div>'
         });
 
-## Reference (outdated)
+## Reference
 
 ### Construction
 
@@ -61,19 +61,19 @@ Creates a Pdfcrowd instance.
 
      Pdfcrowd.convertHtml(html, callbacks [,options])
 
-Convert raw HTML code to PDF.
+Converts raw HTML code to PDF.
 
      Pdfcrowd.convertURI(url, callbacks [,options])
 
-Convert a web page to PDF. The *url* argument must start with http:// or https://.
+Converts a web page to PDF. The *url* argument must start with http:// or https://.
 
      Pdfcrowd.convertFile(fname, callbacks [,options])
 
-Convert a local HTML file to PDF.
+Converts a local HTML file to PDF.
 
 Common arguments:
 
-* The *callbacks* argument is an object that should define the following methods
+* The *callbacks* argument is an object that should define the following methods:
 
         pdf(readableStream)
   Called when the PDF [stream](http://nodejs.org/docs/latest/api/streams.html#readable_Stream) becomes available.
@@ -91,11 +91,11 @@ Common arguments:
     
 ### Helpers
 
-    Pdfcrowd.saveToFile(fileName)
+    saveToFile(fileName)
     
 Returns a callback object that saves the generated PDF to a file *fileName*.
     
-    Pdfcrowd.sendHttpResponse(response [,disposition])
+    sendHttpResponse(response [,disposition])
     
 Returns a callback object that sends the generated PDF in a HTTP
 [response](http://nodejs.org/docs/latest/api/http.html#http.ServerResponse). *dispostion*
