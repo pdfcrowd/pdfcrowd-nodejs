@@ -1,23 +1,24 @@
-var Pdfcrowd = require('../lib/pdfcrowd');
+var pdf = require('../lib/pdfcrowd');
 var fs = require('fs');
 
 credentials = require('./config').Credentials;
 
-function saveToFile(fname) {
-    return {
-        pdf: function(rstream) { 
-            console.log("start");
-            wstream = fs.createWriteStream(fname);
-            rstream.pipe(wstream);
-        },
-        end: function() { console.log("end"); },
-        error: function(errMessage, statusCode) { console.log("ERROR: " + errMessage); },
-    };
-}
 
-myPdfcrowd = new Pdfcrowd(credentials.username,
+myPdfcrowd = new pdf.Pdfcrowd(credentials.username,
                           credentials.apikey);
 
-myPdfcrowd.convertHtml("raw code", saveToFile("html.pdf"))
-myPdfcrowd.convertURI("http://example.com", saveToFile("url.pdf"))
-myPdfcrowd.convertFile("sample.html", saveToFile("file.pdf"))
+myPdfcrowd.convertHtml("raw code", pdf.saveToFile("html.pdf"));
+myPdfcrowd.convertURI("http://example.com", pdf.saveToFile("url.pdf"));
+myPdfcrowd.convertFile("sample.html", pdf.saveToFile("file.pdf"));
+myPdfcrowd.convertHtml(
+    'footer example', 
+    pdf.saveToFile("footer.pdf"),
+    {
+        width: "11in",
+        height: "8.5in",
+        vmargin: ".4in",
+        footer_html: '<div style=text-align:center;font-size:smaller;color:maroon;">\
+                              Page %p out of %n\
+                          </div>'
+    });
+
