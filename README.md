@@ -24,20 +24,20 @@ The following code converts raw HTML code to PDF and sends it as a HTTP
 
     var pdf = require('./lib/pdfcrowd');
 
-    var myPdfcrowd = new pdf.Pdfcrowd('username', 'apikey');
-    myPdfcrowd.convertHtml('<html>...</html>', pdf.sendHttpResponse(response));
+    var client = new pdf.Pdfcrowd('username', 'apikey');
+    client.convertHtml('<html>...</html>', pdf.sendHttpResponse(response));
     
 You can convert also a web page and save it to a file:
     
-    myPdfcrowd.convertURI('http://example.com', pdf.saveToFile("example_com.pdf"));
+    client.convertURI('http://example.com', pdf.saveToFile("example_com.pdf"));
 
 Or a local HTML file:
     
-    myPdfcrowd.convertFile('/local/file.html', pdf.saveToFile("file.pdf"));
+    client.convertFile('/local/file.html', pdf.saveToFile("file.pdf"));
     
 The generated PDF can be customized:
 
-    myPdfcrowd.convertURI(
+    client.convertURI(
         'http://example.com', 
         pdf.saveToFile("example_com.pdf"),
         {
