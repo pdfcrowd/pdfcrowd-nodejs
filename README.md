@@ -19,7 +19,8 @@ Dependencies
 
 ## Getting Started
 
-The following code converts raw HTML code to PDF and sends it as a HTTP
+The following code converts raw HTML code to PDF and returns it in an
+HTTP
 [response](http://nodejs.org/docs/latest/api/http.html#http.ServerResponse):
 
     var pdf = require('./lib/pdfcrowd');
@@ -100,7 +101,7 @@ Saves the generated PDF to a file.
     
     sendHttpResponse(response [,disposition])
     
-Sends the generated PDF in a HTTP
+Returns the generated PDF in an HTTP
 [response](http://nodejs.org/docs/latest/api/http.html#http.ServerResponse). *dispostion*
 can be `"attachment"` (default) or `"inline"`.
 
