@@ -27,9 +27,9 @@ The following code converts raw HTML code to PDF and sends it as a response:
         
     myPdfcrowd.on('pdf', function(rstream) {
         res.setHeader("Content-Type", "application/pdf");
-        res.setHeader("cache-control", "no-cache");
-        res.setHeader("accept-ranges", "none");
-        res.setHeader("content-disposition", "attachment; filename=\"generated.pdf\"");
+        res.setHeader("Cache-Control", "no-cache");
+        res.setHeader("Accept-Ranges", "none");
+        res.setHeader("Content-Disposition", "attachment; filename=\"generated.pdf\"");
         rstream.pipe(res);
     });
         
@@ -44,9 +44,24 @@ You can convert also a webpage:
     
     myPdfcrowd.convertURI('http://example.com');
 
-Or a local html file:
+Or a local HTML file:
     
     myPdfcrowd.convertFile('/local/file.html');
+    
+The generated PDF can be customized:
+
+    myPdfcrowd.convertURI(
+        'http://example.com', 
+        {
+            width: "11in",
+            height: "8.5in",
+            vmargin: ".4in",
+            footer_html: '<div style=text-align:center;font-size:smaller;color:maroon;">\
+                              Page %p out of %n\
+                          </div>'
+        });
+
+## Reference    
     
 
     
