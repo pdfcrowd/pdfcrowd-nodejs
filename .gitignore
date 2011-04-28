@@ -4,4 +4,5 @@
 .\#*
 
 test/config.js
+test/*.pdf
 
