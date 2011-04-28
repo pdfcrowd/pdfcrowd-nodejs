@@ -85,9 +85,9 @@ Convert a local HTML file to PDF.
     
 ### Callbacks
 
-      Pdfcrowd.on('pdf', function([readableStream](http://nodejs.org/docs/latest/api/streams.html#readable_Stream)){});
+      Pdfcrowd.on('pdf', function(readableStream){});
 
-Called when the PDF stream becomes available.
+Called when the PDF [stream](http://nodejs.org/docs/latest/api/streams.html#readable_Stream) becomes available.
 
 
       Pdfcrowd.on('error', function(errorMsg, statusCode){});
