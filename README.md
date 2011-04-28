@@ -33,11 +33,6 @@ The following code converts raw HTML code to PDF and sends it as a response:
         rstream.pipe(res);
     });
         
-    myPdfcrowd.on('error', function(statusCode, err) {
-        res.setHeader("Content-Type", "text/plain");
-        res.end('ERROR: ' + err);
-    });
-
     myPdfcrowd.convertHtml('<html>...</html>');
     
 You can convert also a webpage:
@@ -66,18 +61,40 @@ The generated PDF can be customized:
 ### Construction
 
 #### new Pdfcrowd(username, apikey);
+
+Creates a Pdfcrowd instance.
     
 ### Methods
 
-#### Pdfcrowd.convertHtml(html[, options]);
-#### Pdfcrowd.convertURI(url[, options]);
-#### Pdfcrowd.convertFile(fname[, options]);
-    
-### Events 
+The following methods generate PDF. The optional *options* argument
+lets you customize the created PDF. You can find the list of all
+options
+[here](http://pdfcrowd.com/html-to-pdf-api/#api-ref-conversion-common-par).
 
-####  Pdfcrowd.on('pdf', readable_stream);
-####  Pdfcrowd.on('error', statusCode, err);
+#### Pdfcrowd.convertHtml(html [,options]);
+
+Convert raw HTML code to PDF.
+
+#### Pdfcrowd.convertURI(url [,options]);
+
+Convert a web page to PDF. The *url* argument must start with http:// or https://.
+
+#### Pdfcrowd.convertFile(fname [,options]);
+
+Convert a local HTML file to PDF.
     
+### Callbacks
+
+####  Pdfcrowd.on('pdf', function([readableStream](http://nodejs.org/docs/latest/api/streams.html#readable_Stream)){});
+
+Called when the PDF stream becomes available.
+
+
+####  Pdfcrowd.on('error', function(errorMsg, statusCode){});
+
+Called when an error occurs. *errorMsg* is an string containing the
+error message and *statusCode* is a HTTP status code.
+ 
 
 # License (MIT License)
 
