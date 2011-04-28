@@ -1,11 +1,9 @@
 var pdf = require('../lib/pdfcrowd');
-var fs = require('fs');
 
 credentials = require('./config').Credentials;
 
-
 myPdfcrowd = new pdf.Pdfcrowd(credentials.username,
-                          credentials.apikey);
+                              credentials.apikey);
 
 myPdfcrowd.convertHtml("raw code", pdf.saveToFile("html.pdf"));
 myPdfcrowd.convertURI("http://example.com", pdf.saveToFile("url.pdf"));
