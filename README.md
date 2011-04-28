@@ -91,13 +91,16 @@ Common arguments:
     
 ### Helpers
 
+These functions return a callback object that can be passed to
+the methods above.
+
     saveToFile(fileName)
     
-Returns a callback object that saves the generated PDF to a file *fileName*.
+Saves the generated PDF to a file.
     
     sendHttpResponse(response [,disposition])
     
-Returns a callback object that sends the generated PDF in a HTTP
+Sends the generated PDF in a HTTP
 [response](http://nodejs.org/docs/latest/api/http.html#http.ServerResponse). *dispostion*
 can be `"attachment"` (default) or `"inline"`.
 
