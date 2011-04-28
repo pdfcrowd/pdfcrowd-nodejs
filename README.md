@@ -25,7 +25,7 @@ The following code converts raw HTML code to PDF and sends it as a
     var pdf = require('./lib/pdfcrowd');
 
     var myPdfcrowd = new pdf.Pdfcrowd('your-username', 'your-api-key');
-    myPdfcrowd.convertHtml('<html>...</html>', pdf.sendHttpResponse(res));
+    myPdfcrowd.convertHtml('<html>...</html>', pdf.sendHttpResponse(response));
     
 You can convert also a web page and save it to a file:
     
@@ -59,20 +59,35 @@ Creates a Pdfcrowd instance.
     
 ### Methods
 
-The following methods generate PDF. The optional *options* argument
-lets you customize the created PDF. You can find the list of all
-options
-[here](http://pdfcrowd.com/html-to-pdf-api/#api-ref-conversion-common-par).
+The following methods generate PDF. 
 
-     Pdfcrowd.convertHtml(html [,options]);
+* The *callbacks* argument is an object that should define the following methods
+
+        pdf(readableStream)
+  Called when the PDF [stream](http://nodejs.org/docs/latest/api/streams.html#readable_Stream) becomes available.
+  
+        end()
+  Called when all PDF data has been read.
+        
+        error(errorMessage, statusCode)
+  Called when an error occurs. *errorMessage* is a string containing the error message and *statusCode* is a HTTP status code.
+  
+* The optional *options* argument lets you customize the created
+  PDF. You can find the list of all options
+  [here](http://pdfcrowd.com/html-to-pdf-api/#api-ref-conversion-common-par).
+
+
+-
+
+     Pdfcrowd.convertHtml(html, callbacks [,options]);
 
 Convert raw HTML code to PDF.
 
-     Pdfcrowd.convertURI(url [,options]);
+     Pdfcrowd.convertURI(url, callbacks [,options]);
 
 Convert a web page to PDF. The *url* argument must start with http:// or https://.
 
-     Pdfcrowd.convertFile(fname [,options]);
+     Pdfcrowd.convertFile(fname, callbacks [,options]);
 
 Convert a local HTML file to PDF.
     
