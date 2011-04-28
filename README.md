@@ -53,11 +53,23 @@ The generated PDF can be customized:
 
 ### Construction
 
-     new Pdfcrowd(username, apikey);
+     new Pdfcrowd(username, apikey)
 
 Creates a Pdfcrowd instance.
     
 ### Methods
+
+     Pdfcrowd.convertHtml(html, callbacks [,options])
+
+Convert raw HTML code to PDF.
+
+     Pdfcrowd.convertURI(url, callbacks [,options])
+
+Convert a web page to PDF. The *url* argument must start with http:// or https://.
+
+     Pdfcrowd.convertFile(fname, callbacks [,options])
+
+Convert a local HTML file to PDF.
 
 Common arguments:
 
@@ -76,23 +88,20 @@ Common arguments:
   PDF. You can find the list of all options
   [here](http://pdfcrowd.com/html-to-pdf-api/#api-ref-conversion-common-par).
 
-The following methods generate PDF. 
-
-     Pdfcrowd.convertHtml(html, callbacks [,options]);
-
-Convert raw HTML code to PDF.
-
-     Pdfcrowd.convertURI(url, callbacks [,options]);
-
-Convert a web page to PDF. The *url* argument must start with http:// or https://.
-
-     Pdfcrowd.convertFile(fname, callbacks [,options]);
-
-Convert a local HTML file to PDF.
     
 ### Helpers
 
-TBD 
+    Pdfcrowd.saveToFile(fileName)
+    
+Returns a callback object that saves the generated PDF to a file *fileName*.
+    
+    Pdfcrowd.sendHttpResponse(response [,disposition])
+    
+Returns a callback object that sends the generated PDF in a HTTP
+[response](http://nodejs.org/docs/latest/api/http.html#http.ServerResponse). *dispostion*
+can be `"attachment"` (default) or `"inline"`.
+
+
 
 # License (MIT License)
 
