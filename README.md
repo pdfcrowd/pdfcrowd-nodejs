@@ -9,7 +9,15 @@ username and an API key. Here is the
 
 ## Installation
 
+To install via npm:
+
+    $ npm install pdfcrowd
+    
+Or clone from GitHub and create a symlink in `~/.node_libraries`:
+
     $ git clone git@github.com:pdfcrowd/node-pdfcrowd.git
+    $ ln -s /path/to/node-pdfcrowd ~/.node_libraries/pdfcrowd    
+
     
 Dependencies
 
@@ -23,10 +31,10 @@ The following code converts raw HTML code to PDF and returns it in an
 HTTP
 [response](http://nodejs.org/docs/latest/api/http.html#http.ServerResponse):
 
-    var pdf = require('./lib/pdfcrowd');
+    var pdf = require('pdfcrowd');
 
     var client = new pdf.Pdfcrowd('username', 'apikey');
-    client.convertHtml('<html>...</html>', pdf.sendHttpResponse(response));
+    client.convertHtml('<html>regular HTML code</html>', pdf.sendHttpResponse(response));
     
 You can convert also a web page and save it to a file:
     
