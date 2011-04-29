@@ -3,9 +3,9 @@
 A wrapper for the Pdfcrowd API which lets you convert web pages and raw HTML code to PDF.
 
 You must have an account on
-[http://pdfcrowd.com](http://pdfcrowd.com). This will give you a
+[http://pdfcrowd.com](https://pdfcrowd.com). This will give you a
 username and an API key. Here is the
-[API overview](http://pdfcrowd.com/html-to-pdf-api/).
+[API overview](https://pdfcrowd.com/html-to-pdf-api/).
 
 ## Installation
 
@@ -95,7 +95,7 @@ Converts a local HTML file to PDF.
   
 * The optional *options* argument lets you customize the created
   PDF. You can find the list of all options
-  [here](http://pdfcrowd.com/html-to-pdf-api/#api-ref-conversion-common-par).
+  [here](https://pdfcrowd.com/html-to-pdf-api/#api-ref-conversion-common-par).
 
     
 ### Helpers
