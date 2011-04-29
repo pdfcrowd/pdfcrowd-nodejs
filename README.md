@@ -80,7 +80,7 @@ Converts a web page to PDF. The *url* argument must start with http:// or https:
 
 Converts a local HTML file to PDF.
 
-Common arguments:
+#### Common arguments:
 
 * The *callbacks* argument is an object that should define the following methods:
 
