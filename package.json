@@ -1,6 +1,6 @@
 {
   "name": "pdfcrowd",
-  "version": "1.0.0b",
+  "version": "1.0.0",
   "repository": {
     "type": "git",
     "url": "git@github.com:pdfcrowd/node-pdfcrowd.git"
