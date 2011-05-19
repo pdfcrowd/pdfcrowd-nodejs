@@ -29,7 +29,8 @@ Dependencies
 
 The following code converts raw HTML code to PDF and returns it in an
 HTTP
-[response](http://nodejs.org/docs/latest/api/http.html#http.ServerResponse):
+[response](http://nodejs.org/docs/latest/api/http.html#http.ServerResponse)
+(don't forget to use your `"username"` and `"apikey"`):
 
     var pdf = require('pdfcrowd');
 
