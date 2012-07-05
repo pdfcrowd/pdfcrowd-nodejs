@@ -1,18 +1,22 @@
 var pdf = require('../lib/pdfcrowd');
+var assert = require('assert');
 
 credentials = require('./config').Credentials;
 
 myPdfcrowd = new pdf.Pdfcrowd(credentials.username,
                               credentials.apikey);
 
-var apiOptions =     {
+var apiOptions =  {
     width: "11in",
     height: "8.5in",
     vmargin: ".4in",
     footer_html: '<div style=text-align:center;font-size:smaller;color:maroon;">\
                               Page %p out of %n\
                           </div>'
-}
+};
+
+assert.throws(function() { myPdfcrowd.convertHtml(""); });
+assert.throws(function() { myPdfcrowd.convertURI(null); });
 
 myPdfcrowd.convertFile("sample.html.zip", pdf.saveToFile("zfile.pdf"), apiOptions);
 myPdfcrowd.convertHtml("raw code", pdf.saveToFile("html.pdf"));
