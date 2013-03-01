@@ -4,7 +4,8 @@ var assert = require('assert');
 credentials = require('./config').Credentials;
 
 myPdfcrowd = new pdf.Pdfcrowd(credentials.username,
-                              credentials.apikey);
+                              credentials.apikey,
+                              credentials.host);
 
 var apiOptions =  {
     width: "11in",
