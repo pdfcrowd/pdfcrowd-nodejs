@@ -16,3 +16,6 @@ dist:
 		--exclude=test/config.js \
 	    '--exclude=*.pdf' \
 	    -C .. node-pdfcrowd
+
+clean:
+	rm -rf ./out/node_*.pdf
