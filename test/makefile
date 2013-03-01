@@ -1,6 +1,7 @@
-all: client_test
+all:
+	@true
 
-client_test:
+test:
 	node client_test.js
 
 clean:
