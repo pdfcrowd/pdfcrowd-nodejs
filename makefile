@@ -17,5 +17,9 @@ dist:
 	    '--exclude=*.pdf' \
 	    -C .. node-pdfcrowd
 
+init:
+	test -d ../test_files/out || mkdir -p ../test_files/out
+	test -e test_files || ln -s ../test_files/ test_files
+
 clean:
-	rm -rf ./out/node_*.pdf
+	rm -rf ./test_files/out/node_*.pdf
