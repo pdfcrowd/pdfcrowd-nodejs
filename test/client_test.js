@@ -20,7 +20,7 @@ assert.throws(function() { myPdfcrowd.convertHtml(""); });
 assert.throws(function() { myPdfcrowd.convertURI(null); });
 
 function out_stream(name) {
-    return pdf.saveToFile("../out/node_" + name);
+    return pdf.saveToFile("../test_files/out/node_" + name);
 }
 
 myPdfcrowd.convertFile("sample.html.zip", out_stream("zfile.pdf"), apiOptions);
