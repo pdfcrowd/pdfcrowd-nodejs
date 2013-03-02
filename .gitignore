@@ -4,7 +4,5 @@
 .\#*
 
 test/config.js
-test/*.pdf
 node-pdfcrowd.tgz
-out
-
+test_files
