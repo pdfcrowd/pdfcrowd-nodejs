@@ -1,0 +1,5 @@
+* version 1.1.1
+  - fixed a problem with IE8 when PDF is downloaded over https
+
+* version 1.1.0
+  - added an optional filename parameter to sendHttpResponse callback [cbumgard]
