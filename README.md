@@ -1,4 +1,4 @@
-# node-pdfcrowd
+# pdfcrowd-nodejs
 
 A wrapper for the Pdfcrowd API which lets you convert web pages and raw HTML code to PDF.
 
