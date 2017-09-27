@@ -15,8 +15,8 @@ To install via npm:
     
 Or clone from GitHub and create a symlink in `~/.node_libraries`:
 
-    $ git clone git@github.com:pdfcrowd/node-pdfcrowd.git
-    $ ln -s /path/to/node-pdfcrowd ~/.node_libraries/pdfcrowd    
+    $ git clone git@github.com:pdfcrowd/pdfcrowd-nodejs.git
+    $ ln -s /path/to/pdfcrowd-nodejs ~/.node_libraries/pdfcrowd    
 
     
 Dependencies
