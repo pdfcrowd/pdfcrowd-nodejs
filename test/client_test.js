@@ -23,10 +23,11 @@ function out_stream(name) {
     return pdf.saveToFile("../test_files/out/node_client_" + name);
 }
 
+myPdfcrowd.userStatus(function(res) {
+    console.log('Remaining credits:', res);
+});
 myPdfcrowd.convertFile("sample.html.zip", out_stream("zfile.pdf"), apiOptions);
 myPdfcrowd.convertHtml("raw code", out_stream("html.pdf"));
 myPdfcrowd.convertURI("http://example.com", out_stream("url.pdf"));
 myPdfcrowd.convertFile("sample.html", out_stream("file.pdf"));
 myPdfcrowd.convertHtml('footer example', out_stream("footer.pdf"), apiOptions);
-
-
