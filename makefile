@@ -1,30 +1,18 @@
-all: help
-
-help:
-	@echo "targets:"
-	@echo " dist ... creates a tarball"
-
-.PHONY: test
-test:
-	make -C ./test test
+VERSION = 4.0.0
 
 .PHONY: dist
 dist:
-	mkdir -p dist
-	rm -f dist/node-pdfcrowd.tgz
-	tar -czf dist/node-pdfcrowd.tgz \
-		'--exclude=.git*' \
-		'--exclude=*~' \
-		'--exclude=test/config.js' \
-	    '--exclude=*.pdf' \
-	    '--exclude=*/dist' \
-	    '--exclude=*/test_files' \
-	    -C .. node-pdfcrowd
+	rm -rf dist/ ; mkdir dist/
+	rm -rf /tmp/pdfcrowd-$(VERSION)
+	mkdir /tmp/pdfcrowd-$(VERSION)
+	cp -r * /tmp/pdfcrowd-$(VERSION)
+	cd /tmp && ls -la pdfcrowd-$(VERSION)
+	cd /tmp && zip -r $(CURDIR)/dist/pdfcrowd-$(VERSION)-nodejs.zip \
+		-x\*dist\* \
+		pdfcrowd-$(VERSION)
 
-
-init:
-	test -d ../test_files/out || mkdir -p ../test_files/out
-	test -e test_files || ln -s ../test_files/ test_files
+publish:
+	npm publish --access public
 
 clean:
-	rm -rf ./test_files/out/node_*.pdf dist/*
+	rm -rf dist/* *.tgz

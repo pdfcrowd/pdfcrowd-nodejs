@@ -1,11 +1,11 @@
-# node-pdfcrowd
+# Pdfcrowd API - Node.js client library
 
-A wrapper for the Pdfcrowd API which lets you convert web pages and raw HTML code to PDF.
+The Pdfcrowd API lets you easily convert between HTML, PDF and various image
+formats in your Node.js applications.
 
-You must have an account on
-[http://pdfcrowd.com](https://pdfcrowd.com). This will give you a
-username and an API key. Here is the
-[API overview](https://pdfcrowd.com/html-to-pdf-api/).
+To use the API, you need an account on
+[http://pdfcrowd.com](https://pdfcrowd.com). If you don't have one, you
+can sign up [here](https://pdfcrowd.com/pricing/api/).
 
 ## Installation
 
@@ -15,9 +15,8 @@ To install via npm:
 
 Or clone from GitHub and create a symlink in `~/.node_libraries`:
 
-    $ git clone git@github.com:pdfcrowd/node-pdfcrowd.git
-    $ ln -s /path/to/node-pdfcrowd ~/.node_libraries/pdfcrowd
-
+    $ git clone git@github.com:pdfcrowd/pdfcrowd-nodejs.git
+    $ ln -s /path/to/pdfcrowd-nodejs ~/.node_libraries/pdfcrowd    
 
 Dependencies
 
@@ -25,7 +24,14 @@ Dependencies
 * querystring *native module*
 * fs *native module*
 
-## Getting Started
+
+## New API Beta
+
+API Home:  <https://pdfcrowd.com/doc/api/>
+
+## Stable API
+
+### Getting Started
 
 The following code converts raw HTML code to PDF and returns it in an
 HTTP
@@ -63,15 +69,15 @@ The generated PDF can be customized:
                           </div>'
         });
 
-## Reference
+### Reference
 
-### Construction
+#### Construction
 
      new Pdfcrowd(username, apikey)
 
 Creates a Pdfcrowd instance.
-
-### Methods
+    
+#### Methods
 
      Pdfcrowd.convertHtml(html, callbacks [,options])
 
@@ -85,7 +91,7 @@ Converts a web page to PDF. The *url* argument must start with http:// or https:
 
 Converts a local HTML file to PDF.
 
-#### Common arguments:
+##### Common arguments:
 
 * The *callbacks* argument is an object that should define the following methods:
 
@@ -102,8 +108,7 @@ Converts a local HTML file to PDF.
   PDF. You can find the list of all options
   [here](https://pdfcrowd.com/html-to-pdf-api/#api-ref-conversion-common-par).
 
-
-### Helpers
+#### Helpers
 
 These functions return a callback object that can be passed to
 the methods above.
@@ -122,7 +127,7 @@ can be `"attachment"` (default) or `"inline"`.
 
 # License (MIT License)
 
-Copyright (c) 2011 pdfcrowd.com <info@pdfcrowd.com>
+Copyright (c) 2011-2017 pdfcrowd.com <info@pdfcrowd.com>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
