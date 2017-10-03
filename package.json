@@ -3,7 +3,7 @@
     "version": "4.0.0",
     "repository": {
         "type": "git",
-        "url": "git@github.com:pdfcrowd/node-pdfcrowd.git"
+        "url": "git@github.com:pdfcrowd/pdfcrowd-nodejs.git"
     },
     "directories": {
         "lib": "lib"
@@ -14,9 +14,9 @@
     "files": [
         ""
     ],
-    "description": "A wrapper for the Pdfcrowd API. It allows you to convert web pages or raw HTML code to PDF.",
-    "homepage": "https://github.com/pdfcrowd/node-pdfcrowd",
-    "author": "Pdfcrowd Dev <info+github@pdfcrowd.com> (http://pdfcrowd.com/html-to-pdf-api/)",
+    "description": "A client library for the Pdfcrowd API. It lets you convert between HTML, PDF and various image formats.",
+    "homepage": "https://pdfcrowd.com/doc/api/",
+    "author": "Pdfcrowd <support@pdfcrowd.com> (https://pdfcrowd.com/doc/api/)",
     "main": "./lib/pdfcrowd",
     "license" : "MIT"
 }
