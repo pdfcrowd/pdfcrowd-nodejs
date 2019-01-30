@@ -1,4 +1,4 @@
-VERSION = 4.4.1
+VERSION = 4.4.2
 
 .PHONY: dist
 dist:
