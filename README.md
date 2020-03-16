@@ -25,10 +25,13 @@ Dependencies
 * fs *native module*
 
 
-## Documentation
+## Learn more
 
 * API Home:  <https://pdfcrowd.com/doc/api/>
 * API Reference:  <https://pdfcrowd.com/doc/api/html-to-pdf/nodejs/>
+* Interactive API Playground:
+  * Node.js: <https://pdfcrowd.com/playground/html-to-pdf/?lang=nodejs>
+  * Express.js: <https://pdfcrowd.com/playground/html-to-pdf/?lang=wf-express>
 
 ## License
 
