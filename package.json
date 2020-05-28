@@ -18,5 +18,5 @@
     "homepage": "https://pdfcrowd.com/doc/api/",
     "author": "Pdfcrowd <support@pdfcrowd.com> (https://pdfcrowd.com/doc/api/)",
     "main": "./lib/pdfcrowd",
-    "license" : "MIT"
+    "license": "MIT"
 }
