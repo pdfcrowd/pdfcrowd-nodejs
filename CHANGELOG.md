@@ -1,6 +1,23 @@
 Change Log
 ==========
 
+5.2.2
+-----
+
+- FIX: the hyperlinks to the Pdfcrowd API documentation have been updated
+
+5.2.0
+-----
+
+- NEW: setZipMainFilename
+- NEW: setZipHeaderFilename
+- NEW: setZipFooterFilename
+- NEW: setExtractMetaTags
+- NEW: setTitle for PDF to PDF
+- NEW: setSubject for PDF to PDF
+- NEW: setAuthor for PDF to PDF
+- NEW: setKeywords for PDF to PDF
+
 5.1.1
 -----
 
