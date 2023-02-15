@@ -1,6 +1,11 @@
 Change Log
 ==========
 
+5.12.1
+------
+
+- FIX: retry conversion on error 503
+
 5.12.0
 ------
 
