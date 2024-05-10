@@ -1,4 +1,4 @@
-VERSION = 5.18.1
+VERSION = 5.19.0
 
 .PHONY: dist
 dist:
