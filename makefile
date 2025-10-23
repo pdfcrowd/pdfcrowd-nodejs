@@ -1,4 +1,4 @@
-VERSION = 6.5.2
+VERSION = 6.5.3
 
 .PHONY: dist
 dist:
