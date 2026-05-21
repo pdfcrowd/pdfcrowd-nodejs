@@ -1,6 +1,16 @@
 Change Log
 ==========
 
+6.6.0
+-----
+
+- NEW: setDataVariableMarkers
+
+6.5.4
+-----
+
+- DOCS: use online API reference instead of docstrings
+
 6.5.3
 -----
 
