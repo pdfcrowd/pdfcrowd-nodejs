@@ -1,6 +1,19 @@
 Change Log
 ==========
 
+7.0.0
+-----
+
+- NEW: resolve content Promises to a complete Buffer and file-output Promises to the supplied filename after the destination is closed
+- NEW: add Promise-based output-stream methods returning a Node.js Readable
+- NEW: include TypeScript declarations and support CommonJS and native ES module imports
+- FIX: allow content callback objects to omit the end handler or set it to undefined
+- FIX: avoid the Buffer constructor deprecation warning when encoding credentials in bundled applications
+- CHANGE: remove deprecated setters setUserAgent, setUseMobileUserAgent, setViewportWidth, setViewportHeight, setViewport, setRenderingMode, and setSmartScalingMode, and the error method getCode; use their supported replacements
+- CHANGE: Pdfcrowd.Error now extends the native Error class
+- CHANGE: return a Promise when the callback is omitted or undefined; retain existing callback behavior when a valid callback is supplied
+- CHANGE: require Node.js 18 or newer for the complete supported SDK contract
+
 6.7.1
 -----
 

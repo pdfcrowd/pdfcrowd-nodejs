@@ -1,38 +1,28 @@
-# Pdfcrowd API - Node.js client library
+# PDFCrowd Node.js SDK
 
-The Pdfcrowd API lets you easily convert between HTML, PDF and various image
-formats in your Node.js applications.
-
-To use the API, you need an account on
-[http://pdfcrowd.com](https://pdfcrowd.com). If you don't have one, you
-can sign up [here](https://pdfcrowd.com/pricing/api/).
+Convert HTML, PDF, and images in Node.js applications using the PDFCrowd API.
 
 ## Installation
 
-To install via npm:
+Requires Node.js 18 or newer. Use a maintained Node.js LTS release for new applications.
 
-    $ npm install pdfcrowd
+```sh
+npm install pdfcrowd
+```
 
-Or clone from GitHub and create a symlink in `~/.node_libraries`:
+The SDK has no third-party runtime dependencies.
+See [installation and setup](https://pdfcrowd.com/api/client-library/nodejs/)
+for more information.
 
-    $ git clone git@github.com:pdfcrowd/pdfcrowd-nodejs.git
-    $ ln -s /path/to/pdfcrowd-nodejs ~/.node_libraries/pdfcrowd
+## TypeScript
 
-Dependencies
+TypeScript declarations are included. TypeScript projects must provide `@types/node`
+16 or newer, using a version compatible with their compiler. Add it as a development
+dependency if it is not already installed; the SDK does not install it automatically.
 
-* http *native module*
-* querystring *native module*
-* fs *native module*
+## Documentation
 
-
-## Learn more
-
-* API Home:  <https://pdfcrowd.com/api/>
-* API Reference:  <https://pdfcrowd.com/api/html-to-pdf-nodejs/>
-* Interactive API Playground:
-  * Node.js: <https://pdfcrowd.com/playground/html-to-pdf/?lang=nodejs>
-  * Express.js: <https://pdfcrowd.com/playground/html-to-pdf/?lang=wf-express>
-
-## License
-
-This client library is licensed under the MIT License.
+- [Authentication](https://pdfcrowd.com/api/authentication/): account credentials and API keys.
+- [HTML-to-PDF guide](https://pdfcrowd.com/api/html-to-pdf-nodejs/): conversion basics and result handling.
+- [Examples](https://pdfcrowd.com/api/html-to-pdf-nodejs/examples/): common conversion tasks.
+- [API reference](https://pdfcrowd.com/api/html-to-pdf-nodejs/ref/): methods and options.
