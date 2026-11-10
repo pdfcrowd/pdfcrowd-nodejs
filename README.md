@@ -20,6 +20,19 @@ TypeScript declarations are included. TypeScript projects must provide `@types/n
 16 or newer, using a version compatible with their compiler. Add it as a development
 dependency if it is not already installed; the SDK does not install it automatically.
 
+## Error codes
+
+Starting with version 7.0.1, status and reason codes parsed from API errors
+are numbers. Compare `error.getStatusCode() === 400`, rather than `=== "400"`;
+use numeric comparisons for `error.getReasonCode()` too. An error without a
+status retains `undefined`, and an error without a parsed reason retains `-1`.
+
+The error constructor still accepts an explicit string status for an
+unformatted message and returns it unchanged, so `getStatusCode()` retains
+the type `number | string | undefined`. `getReasonCode()` returns `number`.
+Wrapping an existing SDK error preserves its codes, message, documentation
+link, string output, and original error as `cause`.
+
 ## Documentation
 
 - [Authentication](https://pdfcrowd.com/api/authentication/): account credentials and API keys.

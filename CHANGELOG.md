@@ -1,6 +1,12 @@
 Change Log
 ==========
 
+7.0.1
+-----
+
+- FIX: preserve status, reason, parsed message, documentation link, and cause when wrapping an existing Pdfcrowd.Error, including errors without a structured service message
+- CHANGE: parsed error status and reason codes are now numbers; compare getStatusCode() and getReasonCode() with numbers such as 400 and 123 instead of strings; explicit string status arguments remain supported and missing status remains undefined
+
 7.0.0
 -----
 
