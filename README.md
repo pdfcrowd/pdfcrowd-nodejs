@@ -27,9 +27,9 @@ are numbers. Compare `error.getStatusCode() === 400`, rather than `=== "400"`;
 use numeric comparisons for `error.getReasonCode()` too. An error without a
 status retains `undefined`, and an error without a parsed reason retains `-1`.
 
-The error constructor still accepts an explicit string status for an
-unformatted message and returns it unchanged, so `getStatusCode()` retains
-the type `number | string | undefined`. `getReasonCode()` returns `number`.
+Starting with version 7.0.2, the error constructor converts an explicit numeric
+string status for an unformatted message to a number. `getStatusCode()` returns
+`number | undefined`, and `getReasonCode()` returns `number`.
 Wrapping an existing SDK error preserves its codes, message, documentation
 link, string output, and original error as `cause`.
 

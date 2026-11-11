@@ -1,6 +1,11 @@
 Change Log
 ==========
 
+7.0.2
+-----
+
+- CHANGE: getStatusCode and httpCode now return numbers for explicit numeric string status arguments such as "503"; a missing status remains undefined
+
 7.0.1
 -----
 

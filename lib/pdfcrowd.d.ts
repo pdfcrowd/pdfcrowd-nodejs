@@ -49,12 +49,12 @@ declare namespace pdfcrowd {
             // runtime fallback in pdfcrowd.js), so it must be visible at any target.
             cause: unknown;
             error: string;
-            // Parsed codes are numeric; explicit string statuses are retained.
-            httpCode: number | string | undefined;
+            // Explicit string statuses are normalized to numbers too.
+            httpCode: number | undefined;
             reasonCode: number;
             docLink: string;
             toString(): string;
-            getStatusCode(): number | string | undefined;
+            getStatusCode(): number | undefined;
             getReasonCode(): number;
             getMessage(): string;
             getDocumentationLink(): string;
